@@ -24,7 +24,7 @@ Producer/Consumer 문제 해결을 위한 pc.c,pc2.c와 Reader/Writer 문제를 
 3. writer1, writer2, writer3 함수는 각각 다른 문자열을 str에 복사합니다. 일정 시간마다 한 번씩 새로운 문자열을 str에 쓰고 출력합니다.
    
 ## rw2.c
-위의 코드에서 다음과 같은 점이 변경되었다. 
+위의 코드에서 다음과 같은 점이 변경되었습니다. 
 1. reader 스레드에서 데이터를 읽을 때 mutex 세마포어를 이용하여 상호 배제를 구현합니다. Writer가 쓰기 작업 중이면 Reader 스레드들은 대기합니다.
 2. Writer 스레드가 데이터를 쓸 때 wrt 세마포어를 이용하여 상호 배제를 구현합니다. Writer가 쓰기 작업 중이면 다른 Writer나 Reader 스레드들은 대기합니다.
 3. 이렇게 함으로써 여러 Reader 스레드가 동시에 읽을 수 있고, Writer가 쓰기를 할 때에는 다른 Reader나 Writer가 접근하지 못하도록 보장합니다.
